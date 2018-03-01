@@ -7,6 +7,7 @@ function displayImage(imageURI){
 $scope.data.image= imageURI;	
 }
 function generateImageData(imageURI){
+	console.log(imageURI)
 var testImage = new Image;	    
 testImage.onload = function() {
     var canvas = document.createElement("canvas");
@@ -15,6 +16,7 @@ testImage.onload = function() {
     var ctx = canvas.getContext('2d');
     ctx.drawImage(testImage, 0, 0);
     var dataUrl = canvas.toDataURL('image/png');
+	console.log(dataUrl);
 	//var fullDataUrl= 'data:image/png;base64,' + dataUrl;	
     return dataUrl;
 };
