@@ -14,12 +14,17 @@ testImage.onload = function() {
     canvas.height = testImage.height;
     var ctx = canvas.getContext('2d');
     ctx.drawImage(testImage, 0, 0);
-    var dataUri = canvas.toDataURL('image/png');
-	var fullDataUri= 'data:image/png;base64,' + dataUri;	
-    return fullDataUri;
+    var dataUrl = canvas.toDataURL('image/png');
+	//var fullDataUrl= 'data:image/png;base64,' + dataUrl;	
+    return dataUrl;
 };
 testImage.src = imageURI;  	
 }
+
+$scope.getFullDataUrl=function(){
+ $scope.data.testImage= generateImageData(document.getElementsByClassName('displayImage')[0].src);
+}
+	
 	
 $scope.captureImage=function(){
     
