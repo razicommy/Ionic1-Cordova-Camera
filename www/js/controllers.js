@@ -23,6 +23,19 @@ $scope.captureImage=function(){
     $cordovaCamera.getPicture(options).then(function(imageData) {
 
       $scope.data.image= "data:image/jpeg;base64," + imageData;
+	    
+var testImage = new Image;	    
+testImage.onload = function() {
+    var canvas = document.createElement("canvas");
+    canvas.width = testImage.width();
+    canvas.height = testImage.height();
+    var ctx = canvas.getContext('2d');
+    ctx.drawImage(testImage, 0, 0);
+    var dataUri = canvas.toDataURL('image/png');
+    $scope.data.testimage= 'data:image/png;base64,' + dataUri;				  
+};
+testImage.src = imageData;    
+	    
     }, function(err) {
       // error
     });
