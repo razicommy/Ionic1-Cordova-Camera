@@ -40,7 +40,7 @@ $scope.captureImage=function(){
     $cordovaCamera.getPicture(options).then(function(imageURI) {
 
       displayImage(imageURI);
-	generateImageData(imageURI);     
+	//generateImageData(imageURI);     
 	    
     }, function(err) {
       // error
@@ -66,24 +66,8 @@ $scope.openImage=function(){
     }
 
     $cordovaCamera.getPicture(options).then(function(imageURI) {
-
-       $scope.data.image = imageURI;
-
-var testImage = new Image;	    
-testImage.onload = function() {
-    var canvas = document.createElement("canvas");
-    canvas.width = testImage.width;
-    canvas.height = testImage.height;
-    var ctx = canvas.getContext('2d');
-    ctx.drawImage(testImage, 0, 0);
-    var dataUri = canvas.toDataURL('image/png');
-	console.log(dataUri)
-    $scope.data.testimage= 'data:image/png;base64,' + dataUri;	
-	$scope.$apply();
-	console.log($scope.data.testimage)
-};
-testImage.src = imageURI;   	    
-       
+       displayImage(imageURI);  	    
+       //generateImageData(imageURI);   
     }, function(err) {
       // error
     });
