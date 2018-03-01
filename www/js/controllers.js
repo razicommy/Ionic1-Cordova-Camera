@@ -15,10 +15,8 @@ testImage.onload = function() {
     var ctx = canvas.getContext('2d');
     ctx.drawImage(testImage, 0, 0);
     var dataUri = canvas.toDataURL('image/png');
-	console.log(dataUri)
-    $scope.data.testimage= 'data:image/png;base64,' + dataUri;	
-	$scope.$apply();
-	console.log($scope.data.testimage)
+	var fullDataUri= 'data:image/png;base64,' + dataUri;	
+    return fullDataUri;
 };
 testImage.src = imageURI;  	
 }
