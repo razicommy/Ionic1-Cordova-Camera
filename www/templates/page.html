@@ -10,10 +10,15 @@
       </p>
     </div>
     <div>
-      <img src="img/QOKQFka5S3OfvocuWgWf_blankimage.png" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;" ng-src="{{data.image}}">
+      <img class="displayImage"
+           src="img/QOKQFka5S3OfvocuWgWf_blankimage.png" 
+           style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;" 
+           ng-src="{{data.image}}">
     </div>
     <div>
-      {{data.testimage}}
+      
+      <button id="page-button8" ng-click="generateImageData()" class="button button-positive button-block">Save</button>      
+      {{data.testImage}}
     </div>
   </ion-content>
 </ion-view>
