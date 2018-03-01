@@ -22,7 +22,10 @@ testImage.src = imageURI;
 }
 
 $scope.getFullDataUrl=function(){
- $scope.data.testImage= generateImageData(document.getElementsByClassName('displayImage')[0].src);
+	var imageURI=document.getElementsByClassName('displayImage')[0].src;
+	console.log(imageURI);
+	var result=generateImageData(imageURI);
+ $scope.data.testImage='data:image/png;base64,' + result; 
 }
 	
 	
